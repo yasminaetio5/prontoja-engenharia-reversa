@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProntoJá - Delivery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="#">pronto<span>já</span></a>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#produtos">Ofertas</a>
+      <a href="#restaurantes">Restaurantes</a>
+    </nav>
+    <input id="busca" type="search" placeholder="Buscar comida...">
+    <button class="btn" onclick="abrirCarrinho()">
+      🛒 Carrinho (<span id="quantidade">0</span>)
+    </button>
+  </header>
+
+  <main id="inicio">
+    <section class="categorias">
+      <h1>Peça sua comida favorita!</h1>
+      <div class="lista-categorias" id="categorias"></div>
+    </section>
+
+    <section class="banner">
+      <div>
+        <h2>Seu pedido favorito está aqui! 🍔</h2>
+        <p>Descubra ofertas especiais no ProntoJá.</p>
+        <button class="btn" onclick="mostrarTodos()">Ver ofertas</button>
+      </div>
+      <span class="banner-emoji">🍕🍟</span>
+    </section>
+
+    <section id="produtos">
+      <h2>Ofertas para você</h2>
+      <div class="grade" id="listaProdutos"></div>
+    </section>
+
+    <section id="restaurantes">
+      <h2>Restaurantes em destaque</h2>
+      <div class="grade" id="listaRestaurantes"></div>
+    </section>
+  </main>
+
+  <div id="fundo" class="fundo" onclick="fecharCarrinho()"></div>
+
+  <aside id="carrinho" class="carrinho">
+    <div class="linha">
+      <h2>Meu carrinho</h2>
+      <button onclick="fecharCarrinho()">✕</button>
+    </div>
+    <div id="itensCarrinho"></div>
+    <div class="resumo">
+      <p>Subtotal: <strong id="subtotal">R$ 0,00</strong></p>
+      <p>Entrega: <strong id="entrega">R$ 0,00</strong></p>
+      <h3>Total: <span id="total">R$ 0,00</span></h3>
+      <button class="btn largura" onclick="finalizar()">Finalizar pedido</button>
+    </div>
+  </aside>
+
+  <section id="checkout" class="checkout">
+    <form id="formPedido">
+      <button type="button" onclick="fecharCheckout()">✕ Fechar</button>
+      <h2>Finalizar compra</h2>
+      <p>Simulação de pedido, sem pagamento real.</p>
+
+      <label for="nome">Nome</label>
+      <input id="nome" required placeholder="Seu nome">
+
+      <label for="telefone">Telefone</label>
+      <input id="telefone" type="tel" required placeholder="Seu telefone">
+
+      <label for="endereco">Endereço</label>
+      <input id="endereco" required placeholder="Rua, número e bairro">
+
+      <label for="pagamento">Pagamento fictício</label>
+      <select id="pagamento">
+        <option>Pix simulado</option>
+        <option>Cartão simulado</option>
+        <option>Dinheiro na entrega</option>
+      </select>
+
+      <button class="btn largura" type="submit">Confirmar pedido fictício</button>
+    </form>
+  </section>
+
+  <footer>
+    <h2 class="logo">pronto<span>já</span></h2>
+    <p>Protótipo de delivery para fins de demonstração.</p>
+    <p>Nenhuma transação financeira real é realizada.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
